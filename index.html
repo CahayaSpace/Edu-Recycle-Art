@@ -3,103 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edukasi Seni Ramah Lingkungan</title>
+    <title>Daur Ulang Bersama</title>
     <link href="./src/distt/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
-<body class="bg-green-500 text-gray-800">
+<body class="" id="home">
 
-    <!-- Navbar -->
-    <nav class="bg-green-700 p-4 shadow-md">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-white text-2xl font-bold">Seni Ramah Lingkungan</h1>
-            <ul class="flex space-x-4">
-                <li><a href="#about" class="text-white px-6 hover:text-green-300">Tentang</a></li>
-                <li><a href="#tutorials" class="text-white px-6 hover:text-green-300">Tutorial</a></li>
-                <li><a href="#gallery" class="text-white px-6 hover:text-green-300">Galeri</a></li>
-                <li><a href="#contact" class="text-white px-6 hover:text-green-300">Kontak</a></li>
-            </ul>
-        </div>
+    <nav class="bg-green-700 w-full p-2 shadow-md sticky transition ease-in-out duration-500 top-10 z-50" id="navbar">
+
+        <div class="flex flex-1 items-center justify-start sm:items-stretch sm:justify-start">
+            <div class="hidden sm:ml-6 sm:block">
+              <div class="flex space-x-4">
+                <a href="#home" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Home</a>
+                <a href="./src/components/about.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
+                <a href="#tutorials" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Tutorial</a>
+                <a href="#gallery" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Gallery</a>
+              </div>
+            </div>
+
+            <div class="md:hidden flex items-center">
+                <button class="outline-none mobile-menu-button">
+                    <svg class=" w-6 h-6 text-black hover:text-green-500 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d=" M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+          </div>
     </nav>
+    
+      <script>
+        let lastScrollTop = 0;
+        const navbar = document.getElementById('navbar');
+    
+        window.addEventListener('scroll', function () {
+          let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+          if (scrollTop > lastScrollTop) {
+            navbar.style.top = '-80px'; 
+          } else {
+            navbar.style.top = '0';
+          }
+          lastScrollTop = scrollTop;
+        });
+      </script>
 
-    <!-- Hero Section -->
-    <section class="bg-green-500 text-black py-20">
-        <div class="container mx-auto text-center">
+    <section class="bg-white text-black flex items-center min-h-screen py-20">
+        <div class="container bg-i mx-auto text-center bg-[url('/src/asset/recycle.png')]">
             <h2 class="text-4xl font-bold mb-4">Edukasi Seni dengan Bahan Ramah Lingkungan</h2>
             <p class="text-lg mb-6">Belajar menciptakan karya seni dari bahan yang mendukung keberlanjutan lingkungan.</p>
-            <a href="#tutorials" class="bg-white text-green-700 px-6 py-3 rounded-full hover:bg-gray-100 transition">Mulai Belajar</a>
+            <a href="#tutorials" class="bg-green-500 text-white font-semibold font-Poppins px-6 py-3 rounded-full hover:bg-green-400 transition">Mulai Belajar</a>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-6">Tentang Kami</h2>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Kami adalah platform edukasi yang bertujuan untuk mengajarkan cara menciptakan seni dengan bahan ramah lingkungan. Kami percaya bahwa seni bisa menjadi sarana untuk menjaga lingkungan dan meningkatkan kesadaran akan keberlanjutan.</p>
-        </div>
-    </section>
-
-    <!-- Tutorials Section -->
-    <section id="tutorials" class="bg-gray-200 py-20">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-6">Tutorial Ramah Lingkungan</h2>
+    <section id="tutorials" class="bg-gray-200 py-10">
+        <div class="container min-h-screen mx-auto text-center">
+            <h2 class="text-3xl font-bold mt-auto mb-20">Sampah dan Daur Ulang</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Tutorial 1 -->
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-4">Seni dari Kertas Daur Ulang</h3>
-                    <p class="text-gray-600">Pelajari cara mengolah kertas bekas menjadi karya seni yang menakjubkan.</p>
-                    <a href="https://youtube.com/playlist?list=PLt5I7eZUkp9u5-FrsO1E39IUH0DSLDL-y&si=iqEBJ0qQ-cKQaXXX" class="text-green-700 mt-4 inline-block">Baca Selengkapnya</a>
+                    <h3 class="text-xl font-semibold mb-4">Daur Ulang Sampah Kertas</h3>
+                    <p class="text-gray-600 font-Poppins">Berdasarkan data SIPSN KLHK bahwa sampah kertas menyumbang 10,6% komposisi sampah yang dihasilkan di Indonesia. Sedangkan berdasarkan data The World Counts tahun 2021, sebanyak 26% sampah kertas dihasilkan dari total sampah di dunia. Menurut data KLHK tahun 2020, sebanyak 12% atau 34,5 ton sampah ini dihasilkan di Indonesia. Sampah ini sebenarnya dapat terurai di dalam tanah, tetapi proses penguraiannya bisa menghabiskan waktu 3-6 bulan sesuai dengan kondisi tanahnya</p>
+                    <a href="kertas.html" class="bg-green-500 text-white font-bold mt-4 px-6 py-3 rounded-full hover:bg-green-400 transition inline-block">Mari Kita Pelajari</a>
                 </div>
-                <!-- Tutorial 2 -->
+
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <h3 class="text-xl font-semibold mb-4">Lukisan dengan Pewarna Alami</h3>
-                    <p class="text-gray-600">Gunakan bahan-bahan alami sebagai pewarna untuk menciptakan lukisan ekologis.</p>
-                    <a href="https://youtu.be/8W4wQ3rYZsA?si=UgniSzOLhTlSUyut" class="text-green-700 mt-4 inline-block">Baca Selengkapnya</a>
+                    <p class="text-gray-600 font-Poppins">Temukan keindahan alami dalam setiap sapuan kuas dengan lukisan yang dibuat menggunakan pewarna alami. Menghadirkan sentuhan warna yang lembut dan autentik dari alam, karya ini dihasilkan dari pigmen yang diolah langsung dari tumbuhan, buah, dan mineral—seperti merahnya buah bit, kuningnya kunyit, hingga hijaunya daun bayam. Setiap warna menceritakan kisahnya sendiri, memberikan nuansa yang lebih hangat dan dekat dengan alam.</p>
+                    <a href="pewarna.html" class="bg-green-500 text-white font-bold mt-4 px-6 py-3 rounded-full hover:bg-green-400 transition inline-block">Mari Kita Pelajari</a>
                 </div>
-                <!-- Tutorial 3 -->
+
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <h3 class="text-xl font-semibold mb-4">Seni Patung dari Botol Plastik</h3>
-                    <p class="text-gray-600">Ubah botol plastik menjadi karya patung yang indah dan penuh makna.</p>
-                    <a href="#" class="text-green-700 mt-4 inline-block">Baca Selengkapnya</a>
-                </div>
+                    <p class="text-gray-600 font-Poppins">Sampah plastik selalu menjadi masalah utama dalam pencemaran lingkungan baik pencemaran tanah maupun laut. Sifat sampah plastik tidak mudah terurai, proses pengolahannya menimbulkan toksit dan bersifat karsinogenik, butuh waktu sampai ratusan tahun bila terurai secara alami.Untuk pencemaran di laut, Indonesia merupakan penghasil sampah plastik laut terbesar kedua di dunia. Penelitian dari UC Davis dan Universitas Hasanuddin yang dilakukan di pasar Paotere Makassar menunjukkan 23% sampel ikan yang diambil memiliki kandungan plastik di perutnya.Jika diolah dengan baik, sampah plastik daur ulang dapat menghasilkan keuntungan sebesar Rp 16.379.472 per bulan dari produksi 48 ton sampah plastik
+                    </p>
+                    <a href="plastik.html" class="bg-green-500 text-white font-bold mt-4 px-6 py-3 rounded-full hover:bg-green-400 transition inline-block">Mari Kita Pelajari</a>
+                </div>                
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
     <section id="gallery" class="py-20">
-        <div class="container mx-auto text-center">
+        <div class="container min-h-screen mx-auto text-center">
             <h2 class="text-3xl font-bold mb-6">Galeri Karya</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Image 1 -->
-                <div>
-                    <img src="https://via.placeholder.com/300x200" alt="Karya 1" class="rounded-lg shadow-md">
-                    <p class="text-gray-600 mt-2">Seni dari Limbah Kayu</p>
+
+                <div class="justify-center items-center">
+                    <img src="./src/asset/kertas1.webp" alt="Karya 1" class="rounded-lg shadow-2xl mx-auto justify-center">
+                    <p class="text-red-700">Hasil daur ulang dari kertas koran</p>
                 </div>
-                <!-- Image 2 -->
+
                 <div>
-                    <img src="https://via.placeholder.com/300x200" alt="Karya 2" class="rounded-lg shadow-md">
-                    <p class="text-gray-600 mt-2">Pewarnaan dari Tumbuhan</p>
+                    <img src="./src/asset/Pewarna1.jpg" alt="Karya 2" class="rounded-lg shadow-md">
+                    <p class="text-gray-600 mt-2">Lukisan dari pewarna alami</p>
                 </div>
-                <!-- Image 3 -->
+
                 <div>
-                    <img src="https://via.placeholder.com/300x200" alt="Karya 3" class="rounded-lg shadow-md">
-                    <p class="text-gray-600 mt-2">Patung Plastik Daur Ulang</p>
+                    <img src="./src/asset/plastik1.jpg" alt="Karya 3" class="rounded-lg shadow-md">
+                    <p class="text-gray-600 mt-2">Hasil daur ulang dari botol plastik bekas</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="bg-gray-800 text-black py-20">
+    <section id="contact" class="bg-green-600 text-black py-5">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-6">Kontak Kami</h2>
             <p class="mb-6">Ingin tahu lebih lanjut tentang seni ramah lingkungan? Hubungi kami di email di bawah ini!</p>
-            <a href="mailto:info@seniramahlingkungan.com" class="bg-green-700 px-6 py-3 rounded-full hover:bg-green-600 transition">Email Kami</a>
+            <a href="mailto:info@seniramahlingkungan.com" class="bg-green-500 px-6 py-3 rounded-full hover:bg-emerald-300 transition">Email Kami</a>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-green-700 text-white py-4">
+    <footer class="bg-green-600 text-white py-4">
         <div class="container mx-auto text-center">
             <p>&copy; 2024 Edukasi Seni Ramah Lingkungan. Semua Hak Dilindungi.</p>
         </div>
